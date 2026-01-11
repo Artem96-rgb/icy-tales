@@ -51,10 +51,10 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
+
   --popover-foreground: oklch(0.145 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -63,7 +63,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -82,7 +82,10 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.4362 0.1542 306.98);
   --secondary-10: oklch(0.8118 0.0665 310.44);
-  --secondary-foreground: oklch(0.205 0 0);
+  --foreground: oklch(0.1167 0.0347 42.84);
+  --secondary-foreground: oklch(0.2621 0.0095 248.19);
+  --popover: #F6F3F9;
+  --ring: #646464;
 }
 
 @layer base {
@@ -91,12 +94,24 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-archivo), sans-serif;
+    @apply bg-background text-foreground font-archivo;
   }
 
-  a {
+  a, span {
     @apply inline-block;
+  }
+
+
+  h1,h2 {
+    @apply font-berkshireSwash;
+  }
+
+  h2 {
+    @apply text-4xl lg:text-5xl xl:text-6xl leading-[1.07];
+  }
+
+  h5, .h5 {
+    @apply text-xl font-bold leading-[1.2];
   }
 }
 
@@ -105,7 +120,11 @@
 }
 
 @utility container-big {
-  @apply 2xl:max-w-362.5;
+  @apply 2xl:max-w-370;
+}
+
+@utility container-small {
+  @apply xl:max-w-285;
 }
 
 @utility flex-center {
@@ -116,6 +135,10 @@
   @apply flex items-center;
 }
 
+@utility text-22 {
+  @apply text-[22px];
+}
+
 @utility text-32 {
   @apply text-[32px];
 }
@@ -124,3 +147,18 @@
   @apply text-[22px];
 }
 
+@utility text-40 {
+  @apply text-[40px];
+}
+
+@utility text-112 {
+  @apply text-[112px];
+}
+
+@utility gradient {
+  @apply bg-[linear-gradient(90deg,#EFD7EF_8%,#F5F9FC_39%,#F8EAE1_66%,#EAF8F9_91%)];
+}
+
+@utility gradient-two {
+  @apply bg-[linear-gradient(270deg,#EFD7EF_8%,#F5F9FC_43%,#F8EAE1_64%,#EAF8F9_87%)];
+}

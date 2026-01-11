@@ -16,7 +16,7 @@ export default function Container({
     <div
       className={cn(
         "container",
-        size === "small" ? "container--small" : "container-big",
+        size === "small" ? "container-small" : "container-big",
         className,
       )}
     >

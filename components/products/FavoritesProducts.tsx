@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Container from "@/components/Container";
 import ProductItem from "@/components/products/ProductItem";
+import SectionTop from "@/components/SectionTop";
 
 export default function FavoritesProducts() {
   return (
     <section className="pt-35.5 pb-40.5 gradient-two min-h-244.5 relative z-1">
       <Container size="small">
-        <div className="mb-12.5">
-          <h2 className="text-center">
-            Our <span className="text-primary">Classic</span> Favorites
-          </h2>
-
-          <p className="text-xl leading-[1.3] text-ring text-center">
-            Check out our top products that our customers love.
-          </p>
-        </div>
+        <SectionTop
+          title={
+            <>
+              Our <span>Classic</span> Favorites
+            </>
+          }
+          subtitle="Check out our top products that our customers love."
+        />
 
         <ul className="grid grid-cols-4 gap-7.5">
           <li>

@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { TwoCirclesLittle } from "@/icons/TwoCirclesLittle";
 
 interface IHomePromoProps {
   title: ReactNode;
@@ -18,7 +19,6 @@ interface IHomePromoProps {
     width: number;
     height: number;
   };
-  backgroundImage: string;
 }
 
 export default function HomePromo({
@@ -26,14 +26,10 @@ export default function HomePromo({
   description,
   image,
   link,
-  backgroundImage,
 }: IHomePromoProps) {
   return (
-    <section
-      className="bg-no-repeat bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <Container className="flex-y-center max-lg:flex-col gap-10 lg:gap-21">
+    <section className="">
+      <Container className="flex-y-center max-lg:flex-col gap-10 lg:gap-21 relative">
         <div className="relative z-1 max-w-155">
           <Image
             src={image.url}
@@ -41,7 +37,7 @@ export default function HomePromo({
             width={image.width}
             height={image.height}
           />
-          <div className="rounded-full absolute top-27.5 left-7.5 -z-1 w-102 h-102 lg:w-87.5 lg:h-87.5 xl:w-144.5 xl:h-144.5 bg-popover max-lg:hidden"></div>
+          <div className="rounded-full aspect-square bg-popover absolute top-27.5 sm:left-7.5 -z-1 w-70 sm:w-144.5 lg:w-87.5 xl:w-144.5 max-sm:hidden"></div>
         </div>
 
         <div className="lg:max-w-126.5">
@@ -59,6 +55,10 @@ export default function HomePromo({
               <ArrowRight />
             </Link>
           </Button>
+        </div>
+
+        <div className="absolute z-1 top-20 lg:bottom-51 left-1 lg:-left-4">
+          <TwoCirclesLittle />
         </div>
       </Container>
     </section>

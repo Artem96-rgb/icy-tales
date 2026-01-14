@@ -1,30 +1,15 @@
 import HomeHero from "@/components/pages/home/HomeHero";
 import HomePromo from "@/components/pages/home/HomePromo";
 import FavoritesProducts from "@/components/products/FavoritesProducts";
+import HomeInstagram from "@/components/pages/home/HomeInstagram";
+import HomeCategories from "@/components/pages/home/HomeCategories";
 
 export default function Home() {
   return (
     <>
-      <HomeHero
-        image={{
-          url: "/home-hero-content.png",
-          alt: "Home Hero",
-        }}
-        subtitle="Welcome to The"
-        title={
-          <>
-            Discover <span className="text-primary">Sweet</span> Delights!
-          </>
-        }
-        description="Relish the timeless taste of handcrafted ice cream, made with passion and the finest ingredients."
-        link={{
-          href: "/",
-          title: "Browse Our Classic Flavors",
-        }}
-      />
+      <HomeHero />
 
       <HomePromo
-        backgroundImage="/home-promo-bg.png"
         image={{
           url: "/home-promo.png",
           alt: "Home Promo",
@@ -46,6 +31,10 @@ export default function Home() {
       />
 
       <FavoritesProducts />
+
+      <HomeCategories />
+
+      <HomeInstagram />
     </>
   );
 }

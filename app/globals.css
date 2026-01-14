@@ -97,10 +97,17 @@
     @apply bg-background text-foreground font-archivo;
   }
 
-  a, span {
+  span {
     @apply inline-block;
   }
 
+  a {
+    @apply block;
+  }
+
+  svg {
+    @apply h-auto;
+  }
 
   h1,h2 {
     @apply font-berkshireSwash;
@@ -111,7 +118,7 @@
   }
 
   h5, .h5 {
-    @apply text-xl font-bold leading-[1.2];
+    @apply text-lg lg:text-xl font-bold leading-[1.2];
   }
 }
 

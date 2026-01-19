@@ -44,6 +44,8 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-secondary-10: var(--secondary-10);
+  --color-checkbox-background: var(--checkbox-background);
+  --color-input-border: var(--input-border);
 
   --container-7xl: 97rem;
 }
@@ -86,6 +88,8 @@
   --secondary-foreground: oklch(0.2621 0.0095 248.19);
   --popover: #F6F3F9;
   --ring: #646464;
+  --checkbox-background: #E8E8E8;
+  --input-border: #E3E4E5;
 }
 
 @layer base {
@@ -140,6 +144,10 @@
 
 @utility flex-y-center {
   @apply flex items-center;
+}
+
+@utility flex-x-center {
+  @apply flex justify-center;
 }
 
 @utility text-22 {

@@ -3,6 +3,7 @@ import HomePromo from "@/components/pages/home/HomePromo";
 import FavoritesProducts from "@/components/products/FavoritesProducts";
 import HomeInstagram from "@/components/pages/home/HomeInstagram";
 import HomeCategories from "@/components/pages/home/HomeCategories";
+import SignUp from "@/components/pages/general/SignUp";
 
 export default function Home() {
   return (
@@ -33,6 +34,8 @@ export default function Home() {
       <FavoritesProducts />
 
       <HomeCategories />
+
+      <SignUp />
 
       <HomeInstagram />
     </>

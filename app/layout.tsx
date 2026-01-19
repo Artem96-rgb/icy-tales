@@ -4,6 +4,8 @@ import { Archivo, Berkshire_Swash } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "@/components/ui/sonner";
+import TanstackProvider from "@/lib/providers/tanstack-provider";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -32,7 +34,10 @@ export default function RootLayout({
         className={`${archivo.variable} ${berkshireSwash.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
-        <main className="grow-1">{children}</main>
+        <main className="grow-1">
+          <TanstackProvider>{children}</TanstackProvider>
+        </main>
+        <Toaster />
         <Footer />
       </body>
     </html>

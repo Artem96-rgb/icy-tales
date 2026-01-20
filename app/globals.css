@@ -20,6 +20,7 @@
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
+  --color-ring-100: var(--ring-100);
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
@@ -88,6 +89,7 @@
   --secondary-foreground: oklch(0.2621 0.0095 248.19);
   --popover: #F6F3F9;
   --ring: #646464;
+  --ring-100: #787878;
   --checkbox-background: #E8E8E8;
   --input-border: #E3E4E5;
 }

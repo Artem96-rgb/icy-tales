@@ -12,12 +12,10 @@ export default function SectionTop({
   className,
 }: ISectionTopProps) {
   return (
-    <div
-      className={cn("mb-12.5 text-center space-y-4 lg:space-y-7", className)}
-    >
+    <div className={cn("mb-12.5 text-center", className)}>
       <h2 className="[&_span]:text-primary">{title}</h2>
       {subtitle && (
-        <p className="text-xl leading-[1.3] text-ring">{subtitle}</p>
+        <p className="text-lg lg:text-xl leading-[1.3] text-ring">{subtitle}</p>
       )}
     </div>
   );

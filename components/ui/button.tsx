@@ -21,10 +21,11 @@ const buttonVariants = cva(
         transparent: "bg-transparent",
       },
       size: {
-        default: "h-15.5",
+        default: "h-13 lg:h-15.5",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        lg: "h-13",
         xl: "w-16 h-16",
+        auto: "h-auto",
         icon: "size-9",
         "icon-sm": "size-8",
         "icon-lg": "size-8 lg:size-11.5",

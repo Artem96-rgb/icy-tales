@@ -3,8 +3,9 @@ export const menuItems = [
   {
     label: "Pages",
     submenu: [
-      { label: "Web Development", href: "/services/web" },
-      { label: "UI/UX Design", href: "/services/ui-ux" },
+      { label: "Our Team", href: "/our-team" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms & Conditions", href: "/terms-conditions" },
     ],
   },
   { label: "Blog", href: "/blog" },

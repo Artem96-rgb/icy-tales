@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Fragment } from "react";
 
 import TypographyH1 from "@/components/typography/TypographyH1";
 import {
@@ -12,12 +13,23 @@ import {
 
 interface IHeroSectionProps {
   title: string;
+  breadcrumbs: {
+    id: string;
+    title: string;
+    link: string | null;
+  }[];
   className?: string;
 }
 
-export default function HeroSection({ title, className }: IHeroSectionProps) {
+export default function HeroSection({
+  title,
+  className,
+  breadcrumbs,
+}: IHeroSectionProps) {
   return (
-    <div className={cn("py-10 md:py-20 lg:py-34.5 gradient", className)}>
+    <div
+      className={cn("py-10 md:py-20 lg:py-34.5 gradient mb-12.5", className)}
+    >
       <TypographyH1 className="text-center mb-5">{title}</TypographyH1>
 
       <Breadcrumb>
@@ -26,13 +38,23 @@ export default function HeroSection({ title, className }: IHeroSectionProps) {
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Product Detail</BreadcrumbPage>
-          </BreadcrumbItem>
+
+          {breadcrumbs.map((breadcrumb) =>
+            breadcrumb.link ? (
+              <Fragment key={breadcrumb.id}>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href={breadcrumb.link}>
+                    {breadcrumb.title}
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+              </Fragment>
+            ) : (
+              <BreadcrumbItem key={breadcrumb.id}>
+                <BreadcrumbPage>{breadcrumb.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            ),
+          )}
         </BreadcrumbList>
       </Breadcrumb>
     </div>

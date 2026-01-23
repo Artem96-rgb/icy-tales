@@ -5,15 +5,10 @@ import HomeInstagram from "@/components/pages/home/HomeInstagram";
 import HomeCategories from "@/components/pages/home/HomeCategories";
 import SignUp from "@/components/pages/general/SignUp";
 import Container from "@/components/Container";
-import {
-  SectionTopHighlightedText,
-  SectionTopSubTitle,
-  SectionTopTitle,
-  SectionTopWrapper,
-} from "@/components/SectionTopTwo";
+import { SectionTopWrapper } from "@/components/SectionTopTwo";
 import Image from "next/image";
-import { DoubleTriangleIcon } from "@/icons/DoubleTriangle";
-import { TwoCirclesLittle } from "@/icons/TwoCirclesLittle";
+import TypographyP from "@/components/typography/TypographyP";
+import TypographyH2 from "@/components/typography/TypographyH2";
 
 export default function Home() {
   return (
@@ -45,14 +40,12 @@ export default function Home() {
       <section className="pt-35.5 pb-40.5 gradient-two min-h-244.5 relative z-1">
         <Container size="small">
           <SectionTopWrapper>
-            <SectionTopTitle>
-              Our <SectionTopHighlightedText>Classic</SectionTopHighlightedText>{" "}
-              Favorites
-            </SectionTopTitle>
-            <SectionTopSubTitle>
-              Browse through our different categories to find your favorite ice
-              cream treats.
-            </SectionTopSubTitle>
+            <TypographyH2>
+              Our <span>Classic</span> Favorites
+            </TypographyH2>
+            <TypographyP>
+              Check out our top products that our customers love.
+            </TypographyP>
           </SectionTopWrapper>
 
           <FavoritesProducts />
@@ -80,17 +73,14 @@ export default function Home() {
       <section className="pt-20 pb-22 lg:pt-35.5 lg:pb-37.5">
         <Container>
           <SectionTopWrapper className="space-y-6">
-            <SectionTopTitle>
-              Explore Our{" "}
-              <SectionTopHighlightedText>
-                Categories
-              </SectionTopHighlightedText>{" "}
-            </SectionTopTitle>
+            <TypographyH2>
+              Explore Our <span>Categories</span>
+            </TypographyH2>
 
-            <SectionTopSubTitle>
+            <TypographyP>
               Browse through our different categories to find your favorite ice
               cream treats.
-            </SectionTopSubTitle>
+            </TypographyP>
           </SectionTopWrapper>
 
           <HomeCategories />
@@ -98,47 +88,19 @@ export default function Home() {
       </section>
 
       {/* Block SignUp */}
-      <section className="py-20 lg:py-37">
-        <Container size="small" className="relative z-1">
-          <SectionTopWrapper className="space-y-6.5 mb-14.5">
-            <SectionTopTitle className="max-w-182.5 mx-auto">
-              Sign up For{" "}
-              <SectionTopHighlightedText>
-                Exclusive Deals
-              </SectionTopHighlightedText>{" "}
-              and Updates
-            </SectionTopTitle>
-
-            <SectionTopSubTitle>
-              Get 10% off your next order and stay updated with our latest
-              offers.
-            </SectionTopSubTitle>
-          </SectionTopWrapper>
-
-          <SignUp />
-
-          <div className="absolute right-0 top-12 -z-1 max-sm:hidden">
-            <DoubleTriangleIcon />
-          </div>
-
-          <div className="absolute left-0 bottom-8 -z-1 max-sm:hidden">
-            <TwoCirclesLittle />
-          </div>
-        </Container>
-      </section>
+      <SignUp />
 
       {/* Block Instagram */}
       <section className="pt-20 pb-32 lg:pt-35.5 lg:pb-48 gradient-two overflow-x-hidden">
         <Container className="relative z-1">
           <SectionTopWrapper className="space-y-7">
-            <SectionTopTitle className="max-w-182.5 mx-auto">
-              Follow Us on{" "}
-              <SectionTopHighlightedText>Instagram</SectionTopHighlightedText>
-            </SectionTopTitle>
+            <TypographyH2>
+              Follow Us on <span>Instagram</span>
+            </TypographyH2>
 
-            <SectionTopSubTitle>
+            <TypographyP>
               Join our Instagram community for updates, special deals, and more!
-            </SectionTopSubTitle>
+            </TypographyP>
           </SectionTopWrapper>
 
           <HomeInstagram />

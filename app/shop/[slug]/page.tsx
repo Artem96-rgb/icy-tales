@@ -2,7 +2,7 @@
 
 import HeroSection from "@/components/pages/general/HeroSection";
 import { useQuery } from "@tanstack/react-query";
-import { getFavoriteById } from "@/api/products";
+import { getProductById } from "@/api/products";
 import { use } from "react";
 import Image from "next/image";
 import { Spinner } from "@/components/ui/spinner";
@@ -11,6 +11,7 @@ import { ArrowRight, Star, Heart, Scale } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import RelatedProducts from "@/components/products/RelatedProducts";
 
 export default function SingleProductPage({
   params,
@@ -19,13 +20,26 @@ export default function SingleProductPage({
 }) {
   const { slug } = use(params);
 
+  const breadcrumbs = [
+    {
+      id: "breadcrumb-shop",
+      title: "Shop",
+      link: "/shop",
+    },
+    {
+      id: "breadcrumb-product-detail",
+      title: "Product Detail",
+      link: null,
+    },
+  ];
+
   const {
     data: product,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["favorite", slug],
-    queryFn: () => getFavoriteById(slug),
+    queryKey: ["single-product", slug],
+    queryFn: () => getProductById(slug),
   });
 
   if (isLoading) return <Spinner />;
@@ -33,7 +47,11 @@ export default function SingleProductPage({
 
   return (
     <div>
-      <HeroSection title="Single Product" className="mb-20 lg:mb-35.5" />
+      <HeroSection
+        title="Single Product"
+        className="mb-20 lg:mb-35.5"
+        breadcrumbs={breadcrumbs}
+      />
       <div>
         <Container
           size="small"
@@ -135,7 +153,7 @@ export default function SingleProductPage({
           </div>
         </Container>
 
-        <Container size="small" className="mb-25">
+        <Container size="small" className="mb-12.5 lg:mb-25">
           <Tabs defaultValue="description">
             <TabsList>
               <TabsTrigger value="description">Description</TabsTrigger>
@@ -153,6 +171,8 @@ export default function SingleProductPage({
 
           <Separator className="mb-8" />
         </Container>
+
+        <RelatedProducts currentProduct={product} />
       </div>
     </div>
   );

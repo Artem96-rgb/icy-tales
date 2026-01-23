@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { IImage } from "@/types";
+import TypographyH2 from "@/components/typography/TypographyH2";
+import TypographyP from "@/components/typography/TypographyP";
 // import { TwoCirclesLittle } from "@/icons/TwoCirclesLittle";
 
 interface IAboutUsMissionProps extends IImage {
@@ -25,13 +27,13 @@ export default function AboutUsMission({
     <section className="bg-secondary py-10 md:py-20 lg:py-39.5 relative overflow-hidden">
       <Container size="small" className="relative">
         <div className="lg:max-w-128">
-          <h2 className="mb-10.5 text-background">{title}</h2>
+          <TypographyH2 className="text-background mb-5.5 lg:mb-10.5">
+            {title}
+          </TypographyH2>
 
-          <div className="mb-12">
-            <p className="text-xl leading-[1.6] text-background">
-              {description}
-            </p>
-          </div>
+          <TypographyP className="text-background leading-[1.6] mb-7.5 lg:mb-12">
+            {description}
+          </TypographyP>
 
           <Button asChild={true} className="px-9.75">
             <Link href={link.href}>

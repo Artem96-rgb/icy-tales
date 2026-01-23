@@ -7,9 +7,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import Container from "@/components/Container";
-import SocialList from "@/components/social/SocialList";
-import SocialItem from "@/components/social/SocialItem";
-import { socialData } from "@/data/social-data";
+// import { socialData } from "@/data/social-data";
 import BackToTop from "@/components/BackToTop";
 
 export default function Footer() {
@@ -122,12 +120,6 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-
-            <SocialList>
-              {socialData.map((item) => (
-                <SocialItem key={item.id}>sdf</SocialItem>
-              ))}
-            </SocialList>
           </div>
         </div>
       </Container>

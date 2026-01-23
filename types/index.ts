@@ -7,11 +7,14 @@ export interface IImage {
   };
 }
 
-export interface IProduct {
+export interface IProductBase {
   id: string;
   title: string;
-  description?: string;
+  category: string;
+  description: string;
   shortDescription: string;
   price: number;
   image: string;
 }
+
+export type IProductListItem = Omit<IProductBase, "category" | "description">;

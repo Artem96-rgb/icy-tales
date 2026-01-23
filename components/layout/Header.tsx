@@ -62,7 +62,11 @@ export default function Header() {
                     <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       {item.submenu.map((sub) => (
-                        <NavigationMenuLink key={sub.href} href={sub.href}>
+                        <NavigationMenuLink
+                          key={sub.href}
+                          href={sub.href}
+                          className="hover:bg-primary hover:text-background px-5 py-2.5"
+                        >
                           {sub.label}
                         </NavigationMenuLink>
                       ))}

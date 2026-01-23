@@ -7,6 +7,10 @@ import Footer from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import TanstackProvider from "@/lib/providers/tanstack-provider";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],

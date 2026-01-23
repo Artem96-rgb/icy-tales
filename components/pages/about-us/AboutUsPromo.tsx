@@ -3,6 +3,8 @@ import Container from "@/components/Container";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import TypographyH2 from "@/components/typography/TypographyH2";
+import TypographyP from "@/components/typography/TypographyP";
 
 export default function AboutUsPromo() {
   return (
@@ -19,23 +21,23 @@ export default function AboutUsPromo() {
         </div>
 
         <div className="lg:max-w-141.25">
-          <h2 className="mb-5 lg:mb-10.5">
-            Our <span className="text-primary">Journey</span> Began With a
-            Simple Dream
-          </h2>
+          <TypographyH2 className="mb-5 lg:mb-10.5">
+            Our <span>Journey</span> Began With a Simple Dream
+          </TypographyH2>
 
-          <div className="space-y-7 mb-7 lg:mb-11 text-base lg:text-xl/8 text-ring">
-            <p>
+          <div className="space-y-7 mb-7 lg:mb-11">
+            <TypographyP className="leading-[1.6]">
               Our goal is to make the best ice cream using only the finest,
               natural ingredients. From rich, creamy classics to adventurous new
               creations, every flavor is meticulously crafted in-house to ensure
               the highest quality and freshness.
-            </p>
-            <p>
+            </TypographyP>
+
+            <TypographyP className="leading-[1.6]">
               We take pride in offering a diverse range of options, including
               dairy-free, vegan, and gluten-free choices, so everyone can find
               their perfect scoop.
-            </p>
+            </TypographyP>
           </div>
 
           <Button asChild={true} className="px-5 lg:px-8.5 text-lg">

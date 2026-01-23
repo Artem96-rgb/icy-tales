@@ -2,22 +2,19 @@ import { Button } from "@/components/ui/button";
 import Container from "@/components/Container";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { TwoCirclesLittle } from "@/icons/TwoCirclesLittle";
+import { IImage } from "@/types";
+import TypographyP from "@/components/typography/TypographyP";
+import TypographyH2 from "@/components/typography/TypographyH2";
 
-interface IHomePromoProps {
+interface IHomePromoProps extends IImage {
   title: ReactNode;
   description: string;
   link: {
     href: string;
     title: string;
-  };
-  image: {
-    url: string;
-    alt: string;
-    width: number;
-    height: number;
   };
 }
 
@@ -41,12 +38,10 @@ export default function HomePromo({
         </div>
 
         <div className="lg:max-w-126.5">
-          <h2 className="mb-8.5">{title}</h2>
+          <TypographyH2 className="mb-8.5">{title}</TypographyH2>
 
           <div className="max-w-140">
-            <p className="text-xl leading-[1.3] text-ring mb-8.5">
-              {description}
-            </p>
+            <TypographyP className="mb-8.5">{description}</TypographyP>
           </div>
 
           <Button asChild={true} className="px-3 md:px-9">

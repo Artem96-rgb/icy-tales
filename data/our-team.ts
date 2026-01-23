@@ -1,0 +1,38 @@
+export const ourTeamData = [
+  {
+    id: "team-one",
+    avatar: "/our-team/marvin-jonerr.jpg",
+    title: "Marvin Joner",
+    subtitle: "Bakery Worker",
+    facebookLink: "https://www.facebook.com/",
+    instagramLink: "https://www.instagram.com/",
+    youtubeLink: "https://www.youtube.com/",
+  },
+  {
+    id: "team-two",
+    avatar: "/our-team/patricia-woodrum.jpg",
+    title: "Marvin Joner",
+    subtitle: "Bakery Worker",
+    facebookLink: "https://www.facebook.com/",
+    instagramLink: "https://www.instagram.com/",
+    youtubeLink: "https://www.youtube.com/",
+  },
+  {
+    id: "team-three",
+    avatar: "/our-team/hannaz-stone.jpg",
+    title: "Hannaz Stone",
+    subtitle: "Shop Worker",
+    facebookLink: "https://www.facebook.com/",
+    instagramLink: "https://www.instagram.com/",
+    youtubeLink: "https://www.youtube.com/",
+  },
+  {
+    id: "team-four",
+    avatar: "/our-team/hannaz-stone.jpg",
+    title: "Elina James",
+    subtitle: "Bakery Worker",
+    facebookLink: "https://www.facebook.com/",
+    instagramLink: "https://www.instagram.com/",
+    youtubeLink: "https://www.youtube.com/",
+  },
+];

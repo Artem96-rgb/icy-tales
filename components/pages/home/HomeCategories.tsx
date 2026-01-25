@@ -2,34 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Icategory } from "@/types";
 
-export default function HomeCategories() {
-  const categories = [
-    {
-      id: "category-sundaes",
-      label: "Sundaes",
-      url: "/categories/category-one.jpg",
-    },
-    {
-      id: "category-ice-cream-cones",
-      label: "Ice Cream Cones",
-      url: "/categories/category-two.jpg",
-    },
-    {
-      id: "category-milkshakes",
-      label: "Milkshakes",
-      url: "/categories/category-three.jpg",
-    },
-    {
-      id: "category-seasonal-flavors",
-      label: "Seasonal Flavors",
-      url: "/categories/category-four.jpg",
-    },
-  ];
+interface IHomeCategoriesProps {
+  categories: Icategory[];
+}
 
+export default function HomeCategories({ categories }: IHomeCategoriesProps) {
   return (
     <ul className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7.5">
-      {categories.map((category) => (
+      {categories?.map((category) => (
         <li key={category.id} className="text-center">
           <Link
             href={`/categories/${category.id}`}

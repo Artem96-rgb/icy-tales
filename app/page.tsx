@@ -9,6 +9,7 @@ import { SectionTopWrapper } from "@/components/SectionTopTwo";
 import Image from "next/image";
 import TypographyP from "@/components/typography/TypographyP";
 import TypographyH2 from "@/components/typography/TypographyH2";
+import { categories } from "@/data/categories";
 
 export default function Home() {
   return (
@@ -83,7 +84,7 @@ export default function Home() {
             </TypographyP>
           </SectionTopWrapper>
 
-          <HomeCategories />
+          <HomeCategories categories={categories} />
         </Container>
       </section>
 

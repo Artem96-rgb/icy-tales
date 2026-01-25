@@ -53,7 +53,10 @@ export default function Header() {
           <Logo />
         </div>
 
-        <NavigationMenu className="justify-end max-lg:hidden" viewport={false}>
+        <NavigationMenu
+          className="justify-end max-lg:hidden lg:mr-19"
+          viewport={false}
+        >
           <NavigationMenuList className="gap-10">
             {menuItems?.map((item) => (
               <NavigationMenuItem key={item.label}>

@@ -22,7 +22,10 @@ export default function ProductItem({
     <Link
       href={`/shop/${id}`}
       // className="p-2.75 bg-white rounded-3xl space-y-5"
-      className={cn("p-2.75 bg-[#fafafa] rounded-3xl space-y-5", listClassname)}
+      className={cn(
+        "p-2.75 bg-background rounded-3xl space-y-5 shadow-[0px_2px_73px_2px_rgba(0,0,0,0.05)]",
+        listClassname,
+      )}
     >
       {/* Image Section */}
       <div className="relative">

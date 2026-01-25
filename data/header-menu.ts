@@ -3,6 +3,7 @@ export const menuItems = [
   {
     label: "Pages",
     submenu: [
+      { label: "Shop", href: "/shop" },
       { label: "Our Team", href: "/our-team" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms & Conditions", href: "/terms-conditions" },

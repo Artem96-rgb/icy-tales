@@ -11,10 +11,10 @@ export default function OurTeamPage() {
   ];
 
   return (
-    <div>
+    <>
       <HeroSection title="Our Team" breadcrumbs={breadcrumbs} />
 
       <OurTeamMembers />
-    </div>
+    </>
   );
 }

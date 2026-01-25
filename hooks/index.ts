@@ -45,7 +45,7 @@ export const useClickOutside = (
  * @example
  * const debouncedQuery = useDebounce(query, 300);
  */
-export function useDebounce<T>(value: T, delay: number = 300): T {
+export function useDebounce<T>(value: T, delay: number = 500): T {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {

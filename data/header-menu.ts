@@ -10,5 +10,6 @@ export const menuItems = [
     ],
   },
   { label: "Blog", href: "/blog" },
-  { label: "Faq's", href: "/faq" },
+  { label: "Faq", href: "/faq" },
+  { label: "Contact Us", href: "/contact-us" },
 ];

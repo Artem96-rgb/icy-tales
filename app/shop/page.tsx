@@ -43,7 +43,7 @@ const TOTAL_PAGES = 2;
 const limit = 6;
 
 export default function ShopPage() {
-  const productsRef = useRef<HTMLUListElement>(null);
+  const productsRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState<number>(1);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
@@ -111,7 +111,7 @@ export default function ShopPage() {
       <Container className="mb-37.5">
         {isLoading && <Spinner />}
 
-        <div className="grid grid-cols-[245px_1fr] gap-10">
+        <div ref={productsRef} className="grid grid-cols-[245px_1fr] gap-10">
           <div>
             <div className="relative mb-15">
               <Input
@@ -176,7 +176,7 @@ export default function ShopPage() {
               </Select>
             </div>
 
-            <ul ref={productsRef} className="grid grid-cols-3 gap-7.5">
+            <ul className="grid grid-cols-3 gap-7.5">
               {products.map((product) => (
                 <li key={product.id}>
                   <ProductItem

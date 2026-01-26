@@ -3,11 +3,12 @@ import Container from "@/components/Container";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import TypographyH1 from "@/components/typography/TypographyH1";
 
 export default function HomeHero() {
   return (
     <div className="mb-2 pt-41.5 bg-[linear-gradient(90deg,#EFD7EF_8%,#F5F9FC_39%,#F8EAE1_66%,#EAF8F9_91%)] relative">
-      <Container className="flex-y-center justify-between">
+      <Container size="large" className="flex-y-center justify-between">
         <div className="lg:max-w-194">
           <div className="before:content-[''] before:h-0.75 before:w-8 md:before:w-16 before:bg-secondary before:block flex-y-center gap-4 mb-2.5">
             <p className="font-berkshireSwash text-2xl md:text-40 leading-none">
@@ -15,9 +16,9 @@ export default function HomeHero() {
             </p>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl 2xl:text-112 leading-none text-secondary-foreground mb-5">
-            Discover <span className="text-primary">Sweet</span> Delights!
-          </h1>
+          <TypographyH1 className="mb-5">
+            Discover <span>Sweet</span> Delights!
+          </TypographyH1>
 
           <div className="max-w-140">
             <p className="text-lg md:text-22 mb-8.5">

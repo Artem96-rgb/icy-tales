@@ -24,7 +24,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-13 lg:h-15.5",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        sm: "h-8",
         lg: "h-13",
         xl: "w-16 h-16",
         "size-46": "w-11.5 h-11.5",

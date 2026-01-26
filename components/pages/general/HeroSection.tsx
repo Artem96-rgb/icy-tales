@@ -27,8 +27,11 @@ export default function HeroSection({
   breadcrumbs,
 }: IHeroSectionProps) {
   return (
-    <div
-      className={cn("py-10 md:py-20 lg:py-34.5 gradient mb-12.5", className)}
+    <section
+      className={cn(
+        "py-10 md:py-20 lg:py-34.5 gradient mb-12.5 md:mb-25",
+        className,
+      )}
     >
       <TypographyH1 className="text-center mb-5">{title}</TypographyH1>
 
@@ -57,6 +60,6 @@ export default function HeroSection({
           )}
         </BreadcrumbList>
       </Breadcrumb>
-    </div>
+    </section>
   );
 }

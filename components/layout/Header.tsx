@@ -46,7 +46,10 @@ export default function Header() {
         scrolled && "bg-white/50 backdrop-blur-md py-2 shadow-sm",
       )}
     >
-      <Container className="flex-y-center justify-between gap-2.5 flex-wrap">
+      <Container
+        size="large"
+        className="flex-y-center justify-between gap-2.5 flex-wrap"
+      >
         <div className="flex-y-center gap-2">
           <MobileMenuClient />
 
@@ -89,7 +92,16 @@ export default function Header() {
           <div className="flex-y-center gap-4">
             <Search size={24} />
 
-            <ShoppingBag size={24} />
+            <Button
+              asChild
+              variant="transparent"
+              size="sm"
+              className="w-8 border-none"
+            >
+              <Link href="/cart">
+                <ShoppingBag size={24} />
+              </Link>
+            </Button>
           </div>
 
           <Button asChild className="px-6.5 h-13 max-lg:hidden">

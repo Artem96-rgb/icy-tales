@@ -70,7 +70,7 @@
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-4: #FFD800;
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
@@ -115,10 +115,6 @@
     @apply h-auto;
   }
 
-  h1,h2 {
-    @apply font-berkshireSwash;
-  }
-
   h2 {
     @apply text-4xl lg:text-5xl xl:text-6xl leading-[1.07];
   }
@@ -126,18 +122,6 @@
   h5, .h5 {
     @apply text-lg lg:text-xl font-bold leading-[1.2];
   }
-}
-
-@utility container {
-  @apply mx-auto px-3.75;
-}
-
-@utility container-big {
-  @apply 2xl:max-w-370;
-}
-
-@utility container-small {
-  @apply xl:max-w-285;
 }
 
 @utility flex-center {

@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* Block Categories */}
       <section className="pt-20 pb-22 lg:pt-35.5 lg:pb-37.5">
-        <Container>
+        <Container size="large">
           <SectionTopWrapper className="space-y-6">
             <TypographyH2>
               Explore Our <span>Categories</span>
@@ -93,7 +93,7 @@ export default function Home() {
 
       {/* Block Instagram */}
       <section className="pt-20 pb-32 lg:pt-35.5 lg:pb-48 gradient-two overflow-x-hidden">
-        <Container className="relative z-1">
+        <Container size="large" className="relative z-1">
           <SectionTopWrapper className="space-y-7">
             <TypographyH2>
               Follow Us on <span>Instagram</span>

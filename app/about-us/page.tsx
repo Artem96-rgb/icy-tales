@@ -45,7 +45,6 @@ export default function AboutUsPage() {
   return (
     <div>
       <HeroSection title="About Us" breadcrumbs={breadcrumbs} />
-      {/*breadcrumbs="breadcrumbs"*/}
 
       <AboutUsPromo />
 

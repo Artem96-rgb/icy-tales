@@ -9,7 +9,10 @@ import TypographyP from "@/components/typography/TypographyP";
 export default function AboutUsPromo() {
   return (
     <section className="py-10 md:py-20 lg:py-37">
-      <Container className="flex-y-center max-lg:flex-col gap-10 lg:gap-25.5 relative">
+      <Container
+        size="large"
+        className="flex-y-center max-lg:flex-col gap-10 lg:gap-25.5 relative"
+      >
         <div className="max-w-100 lg:max-w-147.5">
           <Image
             src="/pages/about-us/about-us-promo.jpg"

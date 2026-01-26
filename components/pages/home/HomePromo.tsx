@@ -25,8 +25,11 @@ export default function HomePromo({
   link,
 }: IHomePromoProps) {
   return (
-    <section className="">
-      <Container className="flex-y-center max-lg:flex-col gap-10 lg:gap-21 relative">
+    <section>
+      <Container
+        size="large"
+        className="flex-y-center max-lg:flex-col gap-10 lg:gap-21 relative"
+      >
         <div className="relative z-1 max-w-155">
           <Image
             src={image.url}

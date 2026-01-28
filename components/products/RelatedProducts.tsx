@@ -42,7 +42,7 @@ export default function RelatedProducts({
 
   return (
     <section className="mb-12.5 md:mb-25 lg:mb-38">
-      <Container size="small">
+      <Container>
         <SectionTopWrapper>
           <TypographyH2>
             Related <span>Products</span>

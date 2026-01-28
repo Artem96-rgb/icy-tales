@@ -1,10 +1,8 @@
 export interface IImage {
-  image: {
-    url: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  url: string;
+  alt?: string;
+  width: number;
+  height: number;
 }
 
 export interface IProductBase {
@@ -15,10 +13,15 @@ export interface IProductBase {
   shortDescription: string;
   price: number;
   image: string;
+  images: string[];
 }
 
-export type IProductListItem = Omit<IProductBase, "category" | "description">;
+export type IProductListItem = Omit<
+  IProductBase,
+  "category" | "description" | "images"
+>;
 
+export type IProductId = string;
 export interface IApiProductsGetAllParams {
   page: number;
   limit: number;
@@ -28,7 +31,7 @@ export interface IApiProductsGetAllParams {
   category?: string;
 }
 
-export interface Icategory {
+export interface ICategory {
   id: string;
   label: string;
   url: string;

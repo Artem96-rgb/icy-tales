@@ -46,7 +46,7 @@ export default function HomeHero() {
             width={669}
             height={783}
           />
-          <div className="rounded-full absolute -top-10 -left-10 -z-1 w-102 h-102 xl:w-122 xl:h-122 2xl:w-182 2xl:h-182 bg-primary"></div>
+          <div className="rounded-full absolute -top-10 -left-4 xl:-left-17.5 -z-1 size-102 xl:size-150 2xl:size-182 bg-primary"></div>
         </div>
       </Container>
       <div className="">

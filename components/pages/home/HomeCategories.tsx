@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Icategory } from "@/types";
+import { ICategory } from "@/types";
 
 interface IHomeCategoriesProps {
-  categories: Icategory[];
+  categories: ICategory[];
 }
 
 export default function HomeCategories({ categories }: IHomeCategoriesProps) {

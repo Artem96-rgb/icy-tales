@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
-import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import {
   Field,
@@ -15,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { showToast } from "@/lib/utils";
 
 const formSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -46,12 +46,7 @@ export default function ContactForm() {
   });
 
   function onSubmit() {
-    toast("Data sent successfully", {
-      position: "bottom-right",
-      classNames: {
-        content: "flex flex-col gap-2",
-      },
-    });
+    showToast("Data sent successfully");
   }
 
   return (

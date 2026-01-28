@@ -1,7 +1,7 @@
 "use client";
 
 import Logo from "@/components/ui/logo";
-import { Search, ShoppingBag, ArrowRight } from "lucide-react";
+import { Search, ShoppingBag, ArrowRight, Heart } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -20,9 +20,14 @@ import { Button } from "@/components/ui/button";
 import Container from "@/components/Container";
 import { menuItems } from "@/data/header-menu";
 import MobileMenuClient from "@/components/MobileMenuClient";
+import { useCartStore } from "@/store/cartStore";
+import { Badge } from "@/components/ui/badge";
+import { useWishlistStore } from "@/store/wishlistStore";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const cart = useCartStore((state) => state.cart);
+  const wishlist = useWishlistStore((state) => state.wishlist);
 
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -53,7 +58,14 @@ export default function Header() {
         <div className="flex-y-center gap-2">
           <MobileMenuClient />
 
-          <Logo />
+          <Logo
+            image={{
+              url: "/header-logo.png",
+              alt: "",
+              width: 42,
+              height: 70,
+            }}
+          />
         </div>
 
         <NavigationMenu
@@ -96,15 +108,36 @@ export default function Header() {
               asChild
               variant="transparent"
               size="sm"
-              className="w-8 border-none"
+              className="w-8 border-none [&_svg]:size-6 [&_svg]:stroke-2 relative"
+            >
+              <Link href="/wishlist">
+                <Heart />
+                <div className="absolute -bottom-0.5 -right-0.5 flex-center">
+                  <Badge variant="secondary" className="size-4">
+                    {wishlist && wishlist.length > 0 ? wishlist.length : 0}
+                  </Badge>
+                </div>
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="transparent"
+              size="sm"
+              className="w-8 border-none [&_svg]:size-6 [&_svg]:stroke-2 relative"
             >
               <Link href="/cart">
-                <ShoppingBag size={24} />
+                <ShoppingBag />
+                <div className="absolute -bottom-0.5 -right-0.5 flex-center">
+                  <Badge variant="secondary" className="size-4">
+                    {cart && cart.length > 0 ? cart.length : 0}
+                  </Badge>
+                </div>
               </Link>
             </Button>
           </div>
 
-          <Button asChild className="px-6.5 h-13 max-lg:hidden">
+          <Button asChild className="px-6.5 lg:h-13 max-lg:hidden">
             <Link href="/contact-us" className="gap-5">
               <span>Contact Us</span>
               <ArrowRight size={12} strokeWidth={3} />

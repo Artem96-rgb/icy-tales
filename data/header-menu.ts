@@ -11,5 +11,4 @@ export const menuItems = [
   },
   { label: "Blog", href: "/blog" },
   { label: "Faq", href: "/faq" },
-  { label: "Contact Us", href: "/contact-us" },
 ];

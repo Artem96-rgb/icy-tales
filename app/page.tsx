@@ -16,59 +16,10 @@ export default function Home() {
     <>
       <HomeHero />
 
-      <HomePromo
-        image={{
-          url: "/home-promo.png",
-          alt: "Home Promo",
-          width: 619,
-          height: 724,
-        }}
-        title={
-          <>
-            Relive the Sweet Memories of Classic{" "}
-            <span className="text-primary">Ice Creams</span>
-          </>
-        }
-        description="From rich chocolate fudge to creamy vanilla sundaes,
-            discover our menu of classic ice cream creations."
-        link={{
-          href: "/shop",
-          title: "Explore Our Menu",
-        }}
-      />
+      <HomePromo />
 
       {/* Block Favorites Products */}
-      <section className="pt-35.5 pb-40.5 gradient-two min-h-244.5 relative z-1">
-        <Container size="small">
-          <SectionTopWrapper>
-            <TypographyH2>
-              Our <span>Classic</span> Favorites
-            </TypographyH2>
-            <TypographyP>
-              Check out our top products that our customers love.
-            </TypographyP>
-          </SectionTopWrapper>
-
-          <FavoritesProducts />
-        </Container>
-        <div className="absolute top-34 left-0 -z-1">
-          <Image
-            src="/favorites-products-bg-one.png"
-            width={283}
-            height={437}
-            alt="Image"
-          />
-        </div>
-
-        <div className="absolute bottom-22.5 right-0 -z-1">
-          <Image
-            src="/favorites-products-bg-two.png"
-            width={212}
-            height={500}
-            alt="Image"
-          />
-        </div>
-      </section>
+      <FavoritesProducts />
 
       {/* Block Categories */}
       <section className="pt-20 pb-22 lg:pt-35.5 lg:pb-37.5">

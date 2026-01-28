@@ -15,7 +15,6 @@ export default function ProductListSlider({
   return (
     <Swiper
       modules={[Pagination]}
-      navigation
       pagination={{ clickable: true }}
       slidesPerView={4}
       breakpoints={{

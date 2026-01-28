@@ -48,23 +48,7 @@ export default function AboutUsPage() {
 
       <AboutUsPromo />
 
-      <AboutUsMission
-        image={{
-          url: "/pages/about-us/about-us-mission.jpg",
-          alt: "Mission",
-          width: 1200,
-          height: 675,
-        }}
-        title="Our Mission is to Create Moments"
-        description="We strive to foster a welcoming and joyful environment
-          where customers of all ages can gather, celebrate, and
-          make lasting memories. Our commitment extends beyond
-          serving great ice cream."
-        link={{
-          href: "/",
-          title: "Read More",
-        }}
-      />
+      <AboutUsMission />
 
       <AboutUsStatistics list={statistics} />
 

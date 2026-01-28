@@ -30,11 +30,11 @@ export default function MobileMenuClient() {
       <Button
         type="button"
         className="text-right lg:hidden"
-        variant="transparent"
+        // variant="transparent"
         size="icon-sm"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
-        <Menu size="32" />
+        <Menu />
       </Button>
 
       <div
@@ -45,7 +45,14 @@ export default function MobileMenuClient() {
           ref={menuRef}
         >
           <div className="flex justify-between items-start gap-2">
-            <Logo />
+            <Logo
+              image={{
+                url: "/header-logo.png",
+                alt: "",
+                width: 42,
+                height: 70,
+              }}
+            />
 
             <Button
               type="button"

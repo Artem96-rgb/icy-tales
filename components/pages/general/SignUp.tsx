@@ -4,7 +4,6 @@ import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
-import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -16,6 +15,7 @@ import TypographyP from "@/components/typography/TypographyP";
 import { SectionTopWrapper } from "@/components/SectionTopTwo";
 import { DoubleTriangleIcon } from "@/icons/DoubleTriangle";
 import { TwoCirclesLittle } from "@/icons/TwoCirclesLittle";
+import { showToast } from "@/lib/utils";
 
 const formSchema = z.object({
   email: z.email({ message: "Invalid email format" }),
@@ -39,12 +39,7 @@ export default function SignUp() {
 
   // function onSubmit(data: z.infer<typeof formSchema>) {
   function onSubmit() {
-    toast("Data sent successfully", {
-      position: "bottom-right",
-      classNames: {
-        content: "flex flex-col gap-2",
-      },
-    });
+    showToast("Data sent successfully");
   }
 
   return (

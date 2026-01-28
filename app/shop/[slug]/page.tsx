@@ -4,14 +4,14 @@ import HeroSection from "@/components/pages/general/HeroSection";
 import { useQuery } from "@tanstack/react-query";
 import { getProductById } from "@/api/products";
 import { use } from "react";
-import Image from "next/image";
 import { Spinner } from "@/components/ui/spinner";
 import Container from "@/components/Container";
-import { ArrowRight, Star, Heart, Scale } from "lucide-react";
+import { Star } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import RelatedProducts from "@/components/products/RelatedProducts";
+import AddToCart from "@/components/AddToCart";
+import ProductGallery from "@/components/products/ProductGallery";
 
 export default function SingleProductPage({
   params,
@@ -57,21 +57,8 @@ export default function SingleProductPage({
           size="small"
           className="flex justify-between gap-8 lg:gap-16 mb-17.5 max-lg:flex-col"
         >
-          <div className="flex gap-7.5">
-            <div className="space-y-7.5 max-w-22.5 max-lg:hidden">
-              <div className="w-22.5 h-22.5 bg-popover rounded-xl"></div>
-              <div className="w-22.5 h-22.5 bg-popover rounded-xl"></div>
-              <div className="w-22.5 h-22.5 bg-popover rounded-xl"></div>
-              <div className="w-22.5 h-22.5 bg-popover rounded-xl"></div>
-            </div>
-            <div className="max-w-120">
-              <Image
-                src={product.image}
-                width={699}
-                height={732}
-                alt={product.title}
-              />
-            </div>
+          <div className="max-w-120">
+            <ProductGallery images={product.images} productId={product.id} />
           </div>
 
           <div className="grow-1">
@@ -120,36 +107,7 @@ export default function SingleProductPage({
 
             <Separator className="mb-8" />
 
-            <div className="flex flex-wrap gap-3.5 mb-9.5">
-              <div className="inline-grid grid-cols-[50px_60px_50px] border border-input-border rounded-full h-13">
-                <Button className="" variant="transparent" size="auto">
-                  -
-                </Button>
-                <div className="text-center border-x border-input-border flex-center">
-                  1
-                </div>
-                <Button className="" variant="transparent" size="auto">
-                  +
-                </Button>
-              </div>
-
-              <Button className="px-3 md:px-7" size="lg">
-                <span>Add to Cart</span>
-                <ArrowRight size={16} strokeWidth={3} />
-              </Button>
-            </div>
-
-            <div className="flex gap-14.5">
-              <div className="flex-y-center gap-2.5 text-ring-100">
-                <Heart size={16} />
-                <p className="leading-none">Add to wishlist</p>
-              </div>
-
-              <div className="flex-y-center gap-2.5 text-ring-100">
-                <Scale size={16} />
-                <p className="leading-none">Compare</p>
-              </div>
-            </div>
+            <AddToCart productId={product.id} />
           </div>
         </Container>
 

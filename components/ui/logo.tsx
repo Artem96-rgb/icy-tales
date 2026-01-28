@@ -1,29 +1,40 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { IImage } from "@/types";
 
 type LogoProps = {
-  variant?: "primary" | "secondary";
-  className?: string;
+  image: IImage;
+  linkClassName?: string;
+  imageClassName?: string;
+  titleClassName?: string;
 };
 
-export default function Logo({ variant = "primary", className }: LogoProps) {
-  const isPrimary = variant === "primary";
-
+export default function Logo({
+  image,
+  linkClassName,
+  imageClassName,
+  titleClassName,
+}: LogoProps) {
   return (
-    <Link href="/" className="flex-y-center gap-2">
-      <div className="max-w-10.5">
+    <Link href="/" className={cn("flex-y-center gap-2", linkClassName)}>
+      <div className={cn("max-w-10.5", imageClassName)}>
         <Image
-          src={isPrimary ? "/header-logo.png" : "/footer-logo.png"}
-          alt="Logo"
-          width={42}
-          height={70}
+          src={image.url}
+          alt={image.alt || "Logo"}
+          width={image.width}
+          height={image.height}
         />
       </div>
 
-      <span className="font-berkshireSwash text-32 leading-11.5 text-primary">
+      <span
+        className={cn(
+          "font-berkshireSwash text-2xl lg:text-32 leading-11.5 text-primary [&_span]:text-secondary",
+          titleClassName,
+        )}
+      >
         Icy
-        <span className={cn("text-secondary", className)}>Tales</span>
+        <span>Tales</span>
       </span>
     </Link>
   );

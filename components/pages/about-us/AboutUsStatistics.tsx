@@ -28,9 +28,10 @@ export default function AboutUsStatistics({ list }: IAboutUsStatisticsProps) {
 
         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7.5">
           {list.map((item) => (
-            <li className="relative rounded-2xl" key={item.id}>
-              <span className="absolute w-full h-full bg-primary rounded-2xl top-0.5" />
-
+            <li
+              className="relative rounded-2xl before:content-[''] before:absolute before:size-full before:bg-primary before:rounded-2xl before:top-0.5"
+              key={item.id}
+            >
               <div className="relative z-10 bg-background text-center shadow-[0px_12px_105px_12px_rgba(0,0,0,0.03)] pt-5.5 lg:pt-10.5 pb-8 lg:pb-13 rounded-2xl">
                 <div className="relative mb-4 lg:mb-7 max-w-max mx-auto">
                   <p className="text-3xl lg:text-[44px] leading-none font-berkshireSwash">

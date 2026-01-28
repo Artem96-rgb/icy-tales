@@ -229,7 +229,7 @@ export default function ShopPage() {
         </div>
       </Container>
       {isFetching && (
-        <div className="fixed inset-0 bg-background/90 flex-center">
+        <div className="loader-full-screen">
           <Spinner />
         </div>
       )}

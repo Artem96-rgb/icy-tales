@@ -41,7 +41,16 @@ export default function Footer() {
       <Container className="py-5 md:py-15 lg:py-25">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
           {/* Logo */}
-          <Logo variant="secondary" className="text-white order-1" />
+          <Logo
+            image={{
+              url: "/footer-logo.png",
+              alt: "",
+              width: 41,
+              height: 69,
+            }}
+            linkClassName="order-1"
+            titleClassName="[&_span]:text-background"
+          />
 
           {/* Navigation */}
           <div className="order-3 lg:order-2">

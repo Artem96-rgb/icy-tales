@@ -1,14 +1,11 @@
 "use client";
 
 import HeroSection from "@/components/pages/general/HeroSection";
-import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { getProductsOptions } from "@/api/products";
 import { Spinner } from "@/components/ui/spinner";
 import Container from "@/components/Container";
 import ProductItem from "@/components/products/ProductItem";
 import { useState, useRef, type ChangeEvent } from "react";
-import { IProductListItem } from "@/types";
-import { useDebounce } from "@/hooks";
+
 import {
   Pagination,
   PaginationContent,
@@ -30,6 +27,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { categories } from "@/data/categories";
 import { Button } from "@/components/ui/button";
+import { useProductsFilters } from "@/hooks/useProductsFilters";
 
 const breadcrumbs = [
   {
@@ -40,49 +38,24 @@ const breadcrumbs = [
 ];
 
 const TOTAL_PAGES = 2;
-const limit = 6;
 
 export default function ShopPage() {
-  const productsRef = useRef<HTMLDivElement>(null);
-  const [page, setPage] = useState<number>(1);
-  const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc" | "featured">(
-    "featured",
-  );
-
   const [categoryFilter, setCategoryFilter] = useState<string>("");
-
-  const debouncedSearchTerm = useDebounce(searchTerm);
-  const debouncedSortOrder = useDebounce(sortOrder);
 
   const {
     data: products,
     isLoading,
-    isFetching,
     error,
-  } = useQuery<IProductListItem[]>({
-    queryKey: [
-      "all-products",
-      page,
-      debouncedSearchTerm,
-      debouncedSortOrder,
-      categoryFilter,
-    ],
-    queryFn: () =>
-      getProductsOptions({
-        page,
-        limit: limit,
-        search: debouncedSearchTerm,
-        sortBy: sortOrder !== "featured" ? "price" : undefined,
-        order: sortOrder !== "featured" ? debouncedSortOrder : undefined,
-        category: categoryFilter || undefined,
-      }),
-    placeholderData: keepPreviousData,
-  });
+    isFetching,
+    page,
+    setPage,
+    searchTerm,
+    setSearchTerm,
+    sortOrder,
+    setSortOrder,
+  } = useProductsFilters(categoryFilter);
 
-  // if (isLoading) return <Spinner />;
-  if (error || !products) return null;
+  const productsRef = useRef<HTMLDivElement>(null);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
@@ -103,6 +76,8 @@ export default function ShopPage() {
     setCategoryFilter(value);
     setPage(1);
   };
+
+  if (error) return null;
 
   return (
     <>
@@ -177,7 +152,7 @@ export default function ShopPage() {
             </div>
 
             <ul className="grid grid-cols-3 gap-7.5">
-              {products.map((product) => (
+              {products?.map((product) => (
                 <li key={product.id}>
                   <ProductItem
                     id={product.id}
@@ -228,6 +203,7 @@ export default function ShopPage() {
           </div>
         </div>
       </Container>
+
       {isFetching && (
         <div className="loader-full-screen">
           <Spinner />

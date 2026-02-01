@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingBag, ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import { showToast } from "@/lib/utils";
+import { addProductToCart } from "@/api/products";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useLoaderStore } from "@/store/loaderStore";
 
 interface IAddToCartProps {
   productId: string;
@@ -18,9 +21,28 @@ export default function AddToCart({
   const addToCart = useCartStore((state) => state.addToCart);
   const inCart = useCartStore((state) => state.isInCart(productId));
 
+  const showLoader = useLoaderStore((state) => state.showLoader);
+  const hideLoader = useLoaderStore((state) => state.hideLoader);
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (productId: string) => addProductToCart(productId),
+    onMutate: () => {
+      showLoader();
+    },
+    onSettled: () => {
+      hideLoader();
+    },
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: ["cart-products"] });
+      showToast("Product added to cart");
+    },
+  });
+
   const handleAddToCart = (productId: string) => {
     addToCart(productId);
-    showToast("Product added to cart");
+    mutation.mutate(productId);
   };
 
   if (inCart) {

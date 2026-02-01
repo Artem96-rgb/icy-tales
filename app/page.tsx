@@ -10,6 +10,7 @@ import Image from "next/image";
 import TypographyP from "@/components/typography/TypographyP";
 import TypographyH2 from "@/components/typography/TypographyH2";
 import { categories } from "@/data/categories";
+import BestSellersProducts from "@/components/products/BestSellersProducts";
 
 export default function Home() {
   return (
@@ -18,26 +19,11 @@ export default function Home() {
 
       <HomePromo />
 
-      {/* Block Favorites Products */}
       <FavoritesProducts />
 
-      {/* Block Categories */}
-      <section className="pt-20 pb-22 lg:pt-35.5 lg:pb-37.5">
-        <Container size="large">
-          <SectionTopWrapper className="space-y-6">
-            <TypographyH2>
-              Explore Our <span>Categories</span>
-            </TypographyH2>
+      <HomeCategories categories={categories} />
 
-            <TypographyP>
-              Browse through our different categories to find your favorite ice
-              cream treats.
-            </TypographyP>
-          </SectionTopWrapper>
-
-          <HomeCategories categories={categories} />
-        </Container>
-      </section>
+      <BestSellersProducts />
 
       {/* Block SignUp */}
       <SignUp />

@@ -26,6 +26,7 @@ export default function HeroSection({
   className,
   breadcrumbs,
 }: IHeroSectionProps) {
+  console.log("HeroSection");
   return (
     <section
       className={cn(

@@ -165,7 +165,15 @@
 }
 
 @utility loader-full-screen {
-  @apply fixed inset-0 bg-background/90 flex-center;
+  @apply fixed inset-0 bg-background/90 flex-center z-100;
+}
+
+@utility rounded-t-inherit {
+  @apply rounded-t-[inherit];
+}
+
+@utility rounded-b-inherit {
+  @apply rounded-b-[inherit];
 }
 
 .custom-swiper .swiper-button-prev,

@@ -1,4 +1,4 @@
-import { ShoppingCart, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
 import { IProductListItem } from "@/types";
 import Link from "next/link";
@@ -6,7 +6,6 @@ import TypographyP from "@/components/typography/TypographyP";
 import { cn } from "@/lib/utils";
 import AddToCart from "@/components/AddToCart";
 import WishlistAction from "@/components/WishlistAction";
-import { Button } from "@/components/ui/button";
 
 interface IProductItemProps extends IProductListItem {
   listClassname?: string;

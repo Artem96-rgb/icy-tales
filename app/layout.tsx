@@ -10,6 +10,7 @@ import TanstackProvider from "@/lib/providers/tanstack-provider";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import GlobalLoader from "@/components/GlobalLoader";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -42,6 +43,7 @@ export default function RootLayout({
           <TanstackProvider>{children}</TanstackProvider>
         </main>
         <Toaster />
+        <GlobalLoader />
         <Footer />
       </body>
     </html>

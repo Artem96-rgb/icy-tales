@@ -8,21 +8,20 @@ import Container from "@/components/Container";
 import TypographyH2 from "@/components/typography/TypographyH2";
 import TypographyP from "@/components/typography/TypographyP";
 import { SectionTopWrapper } from "@/components/SectionTopTwo";
-import Image from "next/image";
 import { IProductListItem } from "@/types";
 
-export default function FavoritesProducts() {
+export default function BestSellersProducts() {
   const {
     data: products,
     isLoading,
     error,
   } = useQuery<IProductListItem[]>({
-    queryKey: ["favorites-products"],
+    queryKey: ["best-sellers-products"],
     queryFn: () =>
       getProductsOptions({
         page: 1,
         limit: 8,
-        favorites: true,
+        bestSellers: true,
       }),
   });
 
@@ -30,37 +29,19 @@ export default function FavoritesProducts() {
   if (error || !products) return null;
 
   return (
-    <section className="pt-12.5 pb-17 md:pt-20 md:pb-24.5 lg:pt-35.5 lg:pb-40 gradient-two relative z-1">
+    <section className="pt-12.5 pb-17 md:pt-20 md:pb-24.5 lg:pt-35.5 lg:pb-40">
       <Container>
         <SectionTopWrapper>
           <TypographyH2>
-            Our <span>Classic</span> Favorites
+            Our <span>Best</span> Sellers
           </TypographyH2>
           <TypographyP>
-            Check out our top products that our customers love.
+            Discover the favorites that keep our customers coming back for more.
           </TypographyP>
         </SectionTopWrapper>
 
         <ProductListSlider products={products} />
       </Container>
-
-      <div className="absolute top-34 left-0 -z-1 max-lg:hidden w-50 2xl:w-70.75">
-        <Image
-          src="/favorites-products-bg-one.png"
-          width={283}
-          height={437}
-          alt="Image"
-        />
-      </div>
-
-      <div className="absolute bottom-22.5 right-0 -z-1 max-lg:hidden w-45 2xl:w-53">
-        <Image
-          src="/favorites-products-bg-two.png"
-          width={212}
-          height={500}
-          alt="Image"
-        />
-      </div>
     </section>
   );
 }

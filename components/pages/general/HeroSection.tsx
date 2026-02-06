@@ -26,7 +26,6 @@ export default function HeroSection({
   className,
   breadcrumbs,
 }: IHeroSectionProps) {
-  console.log("HeroSection");
   return (
     <section
       className={cn(
@@ -39,7 +38,9 @@ export default function HeroSection({
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            <BreadcrumbLink href="/" aria-label="Go to Home page">
+              Home
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
 

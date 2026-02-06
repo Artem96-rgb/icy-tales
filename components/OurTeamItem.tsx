@@ -36,7 +36,7 @@ export default function OurTeamItem({
       </div>
 
       <div className="mb-5 text-center">
-        <p className="text-22 leading-none font-bold mb-2">{title}</p>
+        <h3 className="text-22 leading-none mb-2">{title}</h3>
         <TypographyP size="base" className="leading-[1.25]">
           {subtitle}
         </TypographyP>
@@ -45,7 +45,12 @@ export default function OurTeamItem({
       <ul className="flex-x-center gap-2.5">
         <li>
           <Button asChild={true} size="size-46">
-            <Link href={facebookLink} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={facebookLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${title} on Facebook`}
+            >
               <IconFacebook />
             </Link>
           </Button>
@@ -56,6 +61,7 @@ export default function OurTeamItem({
               href={instagramLink}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${title} on Instagram`}
             >
               <IconInstagram />
             </Link>
@@ -63,7 +69,12 @@ export default function OurTeamItem({
         </li>
         <li>
           <Button asChild={true} size="size-46">
-            <Link href={youtubeLink} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${title} on YouTube`}
+            >
               <IconYoutubeOne />
             </Link>
           </Button>

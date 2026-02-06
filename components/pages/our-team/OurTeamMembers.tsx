@@ -7,8 +7,8 @@ import OurTeamItem from "@/components/OurTeamItem";
 
 export default function OurTeamMembers() {
   return (
-    <section className="pt-12.5 pb-15 md:pt-25 md:pb-27.5 lg:pt-35.5 lg:pb-38">
-      <Container size="small">
+    <section className="block-margin-custom">
+      <Container>
         <SectionTopWrapper>
           <TypographyH2>
             Our <span>Team</span> Members

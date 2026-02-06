@@ -176,6 +176,10 @@
   @apply rounded-b-[inherit];
 }
 
+@utility block-margin-custom {
+  @apply mb-12.5 md:mb-25 lg:mb-37.5;
+}
+
 .custom-swiper .swiper-button-prev,
 .custom-swiper .swiper-button-next {
   @apply rounded-full bg-primary [&_svg]:size-4 [&_svg]:text-background hover:bg-secondary transition-all;

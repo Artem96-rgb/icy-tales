@@ -7,8 +7,11 @@ import TypographyH1 from "@/components/typography/TypographyH1";
 
 export default function HomeHero() {
   return (
-    <div className="mb-2 pt-41.5 bg-[linear-gradient(90deg,#EFD7EF_8%,#F5F9FC_39%,#F8EAE1_66%,#EAF8F9_91%)] relative">
-      <Container size="large" className="flex-y-center justify-between">
+    <section className="mb-2 pt-41.5 bg-[linear-gradient(90deg,#EFD7EF_8%,#F5F9FC_39%,#F8EAE1_66%,#EAF8F9_91%)] relative">
+      <Container
+        size="large"
+        className="flex-y-center justify-between max-lg:pb-12.5"
+      >
         <div className="lg:max-w-194">
           <div className="before:content-[''] before:h-0.75 before:w-8 md:before:w-16 before:bg-secondary before:block flex-y-center gap-4 mb-2.5">
             <p className="font-berkshireSwash text-2xl md:text-40 leading-none">
@@ -32,7 +35,7 @@ export default function HomeHero() {
             className="px-3 md:px-9 gap-4.5"
             variant="secondary"
           >
-            <Link href="/">
+            <Link href={"/shop"} aria-label="Go to shop page">
               <span>Browse Our Classic Flavors</span>
               <ArrowRight />
             </Link>
@@ -52,6 +55,6 @@ export default function HomeHero() {
       <div className="">
         <Image src="/wave.png" width={1920} height={125} alt="Wave" />
       </div>
-    </div>
+    </section>
   );
 }

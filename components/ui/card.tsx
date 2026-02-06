@@ -7,7 +7,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-background flex flex-col rounded-xl shadow-[0px_2px_73px_2px_rgba(0,0,0,0.04)] rounded-2xl relative z-1 before:content-[''] before:absolute before:size-full before:bg-secondary before:rounded-[inherit] before:-top-0.5 before:-z-1",
+        "bg-background rounded-xl shadow-[0px_2px_73px_2px_rgba(0,0,0,0.04)] rounded-2xl relative z-1 before:content-[''] before:absolute before:size-full before:bg-secondary before:rounded-[inherit] before:-top-0.5 before:-z-1",
         className,
       )}
       {...props}
@@ -73,7 +73,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-footer"
       className={cn(
-        "flex items-center justify-between gap-3 px-8 [&_svg]:shrink-0 bg-background rounded-b-inherit",
+        "flex items-center gap-3 px-8 [&_svg]:shrink-0 bg-background rounded-b-inherit",
         className,
       )}
       {...props}

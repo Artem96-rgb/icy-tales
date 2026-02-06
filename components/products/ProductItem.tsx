@@ -6,6 +6,7 @@ import TypographyP from "@/components/typography/TypographyP";
 import { cn } from "@/lib/utils";
 import AddToCart from "@/components/AddToCart";
 import WishlistAction from "@/components/WishlistAction";
+import { Button } from "@/components/ui/button";
 
 interface IProductItemProps extends IProductListItem {
   listClassname?: string;
@@ -44,13 +45,15 @@ export default function ProductItem({
       {/* Content Section */}
       <div className="sm:pl-3 sm:pr-2">
         <div className="flex items-start justify-between mb-3.5 max-sm:flex-col max-sm:gap-2">
-          <h3 className="line-clamp-2">
-            <Link
-              href={`/shop/${id}`}
-              className="hover:text-primary transition-all text-lg lg:text-xl leading-[1.2]"
+          <h3>
+            <Button
+              asChild
+              variant="link"
+              size="auto"
+              className="font-bold text-lg lg:text-xl leading-[1.2] whitespace-normal line-clamp-2"
             >
-              {title}
-            </Link>
+              <Link href={`/shop/${id}`}>{title}</Link>
+            </Button>
           </h3>
           <div className="flex-y-center gap-0.5">
             <Star className="fill-yellow-400 text-yellow-400" size={14} />

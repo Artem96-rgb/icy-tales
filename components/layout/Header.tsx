@@ -43,6 +43,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  console.log("header");
+
   return (
     <header
       className={cn(
@@ -110,7 +112,7 @@ export default function Header() {
               size="sm"
               className="w-8 border-none [&_svg]:size-6 [&_svg]:stroke-2 relative"
             >
-              <Link href="/wishlist">
+              <Link href="/wishlist" aria-label="Go to wishlist page">
                 <Heart />
                 <div className="absolute -bottom-0.5 -right-0.5 flex-center">
                   <Badge variant="secondary" className="size-4">
@@ -126,7 +128,7 @@ export default function Header() {
               size="sm"
               className="w-8 border-none [&_svg]:size-6 [&_svg]:stroke-2 relative"
             >
-              <Link href="/cart">
+              <Link href="/cart" aria-label="Go to cart page">
                 <ShoppingBag />
                 <div className="absolute -bottom-0.5 -right-0.5 flex-center">
                   <Badge variant="secondary" className="size-4">
@@ -138,7 +140,11 @@ export default function Header() {
           </div>
 
           <Button asChild className="px-6.5 lg:h-13 max-lg:hidden">
-            <Link href="/contact-us" className="gap-5">
+            <Link
+              href="/contact-us"
+              className="gap-5"
+              aria-label="Go to contact us page"
+            >
               <span>Contact Us</span>
               <ArrowRight size={12} strokeWidth={3} />
             </Link>

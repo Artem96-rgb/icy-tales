@@ -18,7 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-white hover:bg-primary border-secondary hover:border-primary",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "hover:text-primary border-none",
+        link: "hover:text-primary border-none bg-transparent h-auto px-0 rounded-none",
         transparent: "bg-transparent",
       },
       size: {

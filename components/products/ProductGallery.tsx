@@ -62,7 +62,7 @@ export default function ProductGallery({
           <SwiperSlide key={img} className="group">
             <Button
               variant="transparent"
-              className="rounded-lg border-transparent group-[.swiper-slide-thumb-active]:border-primary"
+              className="rounded-lg border-transparent group-[.swiper-slide-thumb-active]:border-primary px-0"
               size="auto"
             >
               <Image

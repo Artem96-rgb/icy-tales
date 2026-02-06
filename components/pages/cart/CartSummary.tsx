@@ -10,10 +10,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { roundNumberToTwo } from "@/lib/utils";
+import { priceCurrency } from "@/data/currency";
 
-export default function CartSummary() {
+export default function CartSummary({ totalPrice }: { totalPrice: number }) {
+  const shippingCost = 20.0;
+
   return (
-    <Card className="max-w-79.5 w-full">
+    <Card className="lg:max-w-79.5 w-full">
       <CardHeader>
         <CardTitle className="text-lg text-center leading-none">
           Order Summary
@@ -45,7 +49,8 @@ export default function CartSummary() {
               Sub Total
             </p>
             <span className="text-sm font-semibold leading-none">
-              {/*${totalPrice}*/}
+              {priceCurrency}
+              {roundNumberToTwo(totalPrice)}
             </span>
           </div>
 
@@ -53,7 +58,10 @@ export default function CartSummary() {
             <p className="text-sm font-medium leading-none text-ring-100">
               Shipping
             </p>
-            <span className="text-sm font-semibold leading-none">$20.00</span>
+            <span className="text-sm font-semibold leading-none">
+              {priceCurrency}
+              {shippingCost.toFixed(2)}
+            </span>
           </div>
         </div>
 
@@ -63,7 +71,8 @@ export default function CartSummary() {
           <div className="flex flex-wrap justify-between gap-x-2 gap-y-5">
             <p className="text-sm font-bold leading-none">Grand Total</p>
             <span className="text-sm font-semibold leading-none text-primary">
-              $89.99
+              {priceCurrency}
+              {roundNumberToTwo(totalPrice + shippingCost)}
             </span>
             <Button asChild className="basis-full" size="h-50">
               <Link href="/" className="gap-5">

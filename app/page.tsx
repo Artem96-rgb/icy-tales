@@ -6,7 +6,6 @@ import HomeCategories from "@/components/pages/home/HomeCategories";
 import SignUp from "@/components/pages/general/SignUp";
 import Container from "@/components/Container";
 import { SectionTopWrapper } from "@/components/SectionTopTwo";
-import Image from "next/image";
 import TypographyP from "@/components/typography/TypographyP";
 import TypographyH2 from "@/components/typography/TypographyH2";
 import { categories } from "@/data/categories";

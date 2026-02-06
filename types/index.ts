@@ -31,6 +31,11 @@ export interface IProductCart {
   quantity: number;
 }
 
+export interface IProductCartTwo extends IProductBase {
+  cartId: string;
+  quantity: number;
+}
+
 export interface IApiProductsGetAllParams {
   page: number;
   limit: number;

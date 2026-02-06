@@ -9,6 +9,6 @@ export const menuItems = [
       { label: "Terms & Conditions", href: "/terms-conditions" },
     ],
   },
-  { label: "Blog", href: "/blog" },
+  // { label: "Blog", href: "/blog" },
   { label: "Faq", href: "/faq" },
 ];

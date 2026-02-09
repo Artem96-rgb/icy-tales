@@ -101,7 +101,7 @@ export default function ShopContent() {
           </div>
 
           <Select value={sortOrder} onValueChange={handleSortOrderChange}>
-            <SelectTrigger className="min-w-45.5">
+            <SelectTrigger className="min-w-45.5" size="sm">
               <SelectValue placeholder="Featured" />
             </SelectTrigger>
             <SelectContent position="popper" className="min-w-45.5">

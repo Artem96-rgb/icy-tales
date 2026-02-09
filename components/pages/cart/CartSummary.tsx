@@ -75,7 +75,7 @@ export default function CartSummary({ totalPrice }: { totalPrice: number }) {
               {roundNumberToTwo(totalPrice + shippingCost)}
             </span>
             <Button asChild className="basis-full" size="h-50">
-              <Link href="/" className="gap-5">
+              <Link href={"/checkout"} className="gap-5">
                 Proceed to checkout
                 <ArrowRight />
               </Link>
